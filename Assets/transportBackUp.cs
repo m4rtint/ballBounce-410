@@ -2,20 +2,25 @@
 using System.Collections;
 
 public class transportBackUp : MonoBehaviour {
-	float originalY;
+	float endPositionY;
 	float ballX = 43.2f;
 	float ballY;
-
+	static float bottomFloorHeight = -6.0f;
+	static float startFloorHeight = 18.9f;
 	float scale = 5.0f;
 	double oneScale;
 		void OnTriggerEnter2D(Collider2D other)
 		{
 
 		//location
-		originalY = transform.position.y;
-		Debug.Log (originalY);
-		float height = originalY + 7.03f;
-		ballY = 18.9f + height;
+		//Get position y of ball.
+		endPositionY = transform.position.y;
+		Debug.Log (endPositionY);
+		//Get Height different between ball and floor
+		float height = endPositionY - bottomFloorHeight;
+		//Add Height between ball and floor to Y Starting position.
+		ballY = startFloorHeight + height;
+		//Change Position of ball up
 		transform.position = new Vector2 (ballX, ballY);
 
 		//size

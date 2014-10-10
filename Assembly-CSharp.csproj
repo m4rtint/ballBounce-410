@@ -5,7 +5,7 @@
 	<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
 	<ProductVersion>10.0.20506</ProductVersion>
 	<SchemaVersion>2.0</SchemaVersion>
-	<ProjectGuid>{41CD6F6A-794E-48F7-6917-BF76981F1DFF}</ProjectGuid>
+	<ProjectGuid>{3595D6D2-D40C-E4B4-1A98-4309CB5E6D63}</ProjectGuid>
 	<OutputType>Library</OutputType>
 	<AppDesignerFolder>Properties</AppDesignerFolder>
 	<RootNamespace></RootNamespace>
@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\camera.cs" />
+     <Compile Include="Assets\test.cs" />
      <Compile Include="Assets\transportBackUp.cs" />
      <Compile Include="Assets\updateSize.cs" />
   </ItemGroup>

@@ -47,7 +47,6 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\camera.cs" />
-     <Compile Include="Assets\test.cs" />
      <Compile Include="Assets\transportBackUp.cs" />
      <Compile Include="Assets\updateSize.cs" />
   </ItemGroup>

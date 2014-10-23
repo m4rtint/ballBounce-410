@@ -5,8 +5,8 @@ public class transportBackUp : MonoBehaviour {
 	float endPositionY;
 	float ballX = 43.2f;
 	float ballY;
-	static float bottomFloorHeight = -6.0f;
-	static float startFloorHeight = 18.9f;
+	public static float bottomFloorHeight = -18.4f;
+	public static float startFloorHeight = 19.6f;
 	float scale = 5.0f;
 	double oneScale;
 		void OnTriggerEnter2D(Collider2D other)

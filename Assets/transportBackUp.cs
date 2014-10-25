@@ -9,8 +9,8 @@ public class transportBackUp : MonoBehaviour {
 	public static float startFloorHeight = 19.6f;
 	float scale = 5.0f;
 	double oneScale;
-		void OnTriggerEnter2D(Collider2D other)
-		{
+	void OnTriggerEnter2D(Collider2D other)
+	{
 
 		//location
 		//Get position y of ball.
@@ -26,12 +26,23 @@ public class transportBackUp : MonoBehaviour {
 		//size
 		scale = Random.Range (5.0f, 25.0f);
 		oneScale = Mathf.Round (scale * 1.000f)/1.000f ;
+	}
 
+	/*void colourMesh(int n){
+		var mesh : Mesh = GetComponent(MeshFilter).mesh;
+		var vertices : Vector3[] = mesh.vertices;
+		var colors : Color[] = new Color[vertices.Length];
 
+		for (var i = 0; i < vertices.Length;i++)
+			colors[i] = Color.Lerp(Color.red, Color.green, vertices[i].y);
 
+		mesh.colors = colors;
+	}
+	*/
 
-		}
-
+		
+	//hill is a full circle, make it into half, and partiition it
+		
 	void Update(){
 				if (transform.localScale.x != scale) {
 						if (transform.localScale.x < oneScale) {

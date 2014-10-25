@@ -39,6 +39,18 @@ public class transportBackUp : MonoBehaviour {
 
 		}
 
+	/*void colourMesh(int n){
+		var mesh : Mesh = GetComponent(MeshFilter).mesh;
+		var vertices : Vector3[] = mesh.vertices;
+		var colors : Color[] = new Color[vertices.Length];
+
+		for (var i = 0; i < vertices.Length;i++)
+			colors[i] = Color.Lerp(Color.red, Color.green, vertices[i].y);
+
+		mesh.colors = colors;
+	}
+	*/
+
 	void Update(){
 				if (transform.localScale.x != scale) {
 						if (transform.localScale.x < oneScale) {

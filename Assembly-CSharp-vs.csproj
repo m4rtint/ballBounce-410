@@ -50,7 +50,6 @@
      <Compile Include="Assets\Scripts\resizeBump.cs" />
      <Compile Include="Assets\Scripts\transportBackUp.cs" />
      <Compile Include="Assets\Scripts\updateSize.cs" />
-     <Compile Include="Assets\transportBackUp.cs" />
      <None Include="Assets\Colouration.shader" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

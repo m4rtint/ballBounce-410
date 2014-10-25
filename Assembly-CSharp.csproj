@@ -46,9 +46,12 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\camera.cs" />
+     <Compile Include="Assets\Scripts\camera.cs" />
+     <Compile Include="Assets\Scripts\resizeBump.cs" />
+     <Compile Include="Assets\Scripts\transportBackUp.cs" />
+     <Compile Include="Assets\Scripts\updateSize.cs" />
      <Compile Include="Assets\transportBackUp.cs" />
-     <Compile Include="Assets\updateSize.cs" />
+     <None Include="Assets\Colouration.shader" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

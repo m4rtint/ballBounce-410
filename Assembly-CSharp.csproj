@@ -46,11 +46,11 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\PieChartMesh.cs" />
      <Compile Include="Assets\Scripts\camera.cs" />
      <Compile Include="Assets\Scripts\resizeBump.cs" />
      <Compile Include="Assets\Scripts\transportBackUp.cs" />
      <Compile Include="Assets\Scripts\updateSize.cs" />
-     <Compile Include="Assets\piechart\PieChartMesh.cs" />
      <Compile Include="Assets\piechart\PieChartMeshController.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

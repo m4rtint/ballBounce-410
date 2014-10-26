@@ -1,8 +1,9 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\piechart\PieChartMeshController.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\assetAdd.cs">
     <Files>
-      <File FileName="Assets\piechart\PieChartMeshController.cs" Line="10" Column="46" />
+      <File FileName="Assets\Scripts\assetAdd.cs" Line="5" Column="4" />
+      <File FileName="Assets\piechart\PieChartMeshController.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

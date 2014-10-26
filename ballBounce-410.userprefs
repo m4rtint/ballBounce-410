@@ -1,13 +1,12 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\piechart\BumpPieChartMeshController.cs">
     <Files>
-      <File FileName="Assets\piechart\BumpPieChartMeshController.cs" Line="10" Column="78" />
+      <File FileName="Assets\piechart\BumpPieChartMeshController.cs" Line="1" Column="1" />
+      <File FileName="Assets\piechart\BumpPieChartMeshController.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\resizeBump.cs" Line="1" Column="1" />
       <File FileName="Assets\piechart\PieChartMeshController.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\assetAdd.cs" Line="1" Column="1" />
-      <File FileName="Assets\PieChartMesh.cs" Line="2" Column="19" />
-      <File FileName="Assets\BumpPieChartMesh.cs" Line="156" Column="13" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

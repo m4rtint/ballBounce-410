@@ -11,7 +11,7 @@ public class PieChartMeshController : MonoBehaviour
         if (mPieChart != null)
         {
             mPieChart.Init(mData, 100, 0, 100, null);
-            mData = GenerateRandomValues(4);
+            mData = GenerateRandomValues(22);
             mPieChart.Draw(mData);
         }
 
@@ -21,7 +21,7 @@ public class PieChartMeshController : MonoBehaviour
     {
         if (Input.GetKeyDown("a"))
         {
-            mData = GenerateRandomValues(4);
+            mData = GenerateRandomValues(22);
             mPieChart.Draw(mData);
         }
     }

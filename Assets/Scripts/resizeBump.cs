@@ -17,7 +17,7 @@ public class resizeBump : MonoBehaviour {
 			Debug.Log ("I can change it now");
 			//Change stuff here
 			scale = Random.Range(5.0f,25.0f);
-			transform.localScale = new Vector3 (scale, scale, 0.0f);
+			transform.localScale = new Vector3 (scale, scale, 1.0f);
 			enterTrigger=false;
 
 				}

@@ -30,6 +30,7 @@ public class PieChartMeshController : MonoBehaviour
     {
         float[] targets = new float[length];
 
+
         for (int i = 0; i < length; i++)
         {
             targets[i] = Random.Range(0f, 100f);

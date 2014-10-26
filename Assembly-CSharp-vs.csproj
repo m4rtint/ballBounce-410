@@ -46,12 +46,14 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\BumpPieChartMesh.cs" />
      <Compile Include="Assets\PieChartMesh.cs" />
      <Compile Include="Assets\Scripts\assetAdd.cs" />
      <Compile Include="Assets\Scripts\camera.cs" />
      <Compile Include="Assets\Scripts\resizeBump.cs" />
      <Compile Include="Assets\Scripts\transportBackUp.cs" />
      <Compile Include="Assets\Scripts\updateSize.cs" />
+     <Compile Include="Assets\piechart\BumpPieChartMeshController.cs" />
      <Compile Include="Assets\piechart\PieChartMeshController.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

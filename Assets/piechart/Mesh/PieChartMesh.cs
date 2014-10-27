@@ -144,7 +144,7 @@ public class PieChartMesh : MonoBehaviour
         mesh.name = "Pie Chart Mesh";
 
         // Roration offset (to get star point to "12 o'clock")
-        float rotOffset = mRotationAngle / 360f * 2f * Mathf.PI;
+        float rotOffset = mRotationAngle / 360f*2f  * Mathf.PI;
 
         // Calc the points in circle
         float angle;
@@ -153,7 +153,7 @@ public class PieChartMesh : MonoBehaviour
 
         for (int i = 0; i < mSlices; i++)
         {
-            angle = i * 2f * Mathf.PI / mSlices;
+            angle = i*2f * Mathf.PI / mSlices;
             x[i] = (Mathf.Cos(angle + rotOffset) * mRadius);
             y[i] = (Mathf.Sin(angle + rotOffset) * mRadius);
         }
@@ -224,3 +224,5 @@ public class PieChartMesh : MonoBehaviour
     public Material[] Materials { get { return mMaterials; } set { mMaterials = value; } }
 
 }
+
+//Credit to :http://forum.unity3d.com/threads/create-a-pie-chart-in-unity.174529/

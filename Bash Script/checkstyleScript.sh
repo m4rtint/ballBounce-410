@@ -9,6 +9,13 @@
 #checkstyle errors found, the commit sha1 hash, and the author's name separated by
 #single spaces. Fortunately, all the values required can be found from the output 
 #information.
+#
+#RUN DIRECTIONS
+#Navigate to directory containing git repos, have both repos available
+#If editing file in Windows, run
+#sed -i 's/\r$//' checkstyleScript.sh
+#This removes the error-causing endlines introduced when
+#editing the script in Windows
 
 cd team-04
 git checkout -q master
@@ -18,7 +25,6 @@ do
 IFS=' '
 array=($line)
 git checkout -q "${array[0]}"
-echo "${array[0]}"
 cd ..
 java -jar checkstyle-6.0-all.jar -c sun_checks.xml -r team-04/edudata/src > "$line".txt
 cd team-04

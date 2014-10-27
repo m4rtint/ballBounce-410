@@ -20,6 +20,7 @@
 cd team-04
 git checkout -q master
 git log --pretty="%h %an" > ../commits.txt
+echo > team4.txt
 while read line
 do
 IFS=' '
@@ -38,6 +39,7 @@ done < ../commits.txt
 git checkout -q master
 cd ..
 rm commits.txt
+sed -i 's/\.txt$//' team4.txt
 
 #After this point, script goes through all libgdx commits
 #Amount is huge, not for small machines

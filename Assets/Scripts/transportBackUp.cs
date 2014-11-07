@@ -17,10 +17,14 @@ public class transportBackUp : MonoBehaviour {
 	ArrayList allData = new ArrayList();
 	//=====================
 	resizeBump bumpScript;
+	PieChartMeshController pieChartScript;
+	BumpPieChartMeshController BumpChartScript;
 
 	void Start(){
 		ballScript = GameObject.Find ("leftwall").GetComponent<dataReader> ();
 		bumpScript = GameObject.Find ("bump").GetComponent<resizeBump> ();
+		pieChartScript = GameObject.Find ("ball").GetComponent<PieChartMeshController> ();
+		BumpChartScript = GameObject.Find ("bump").GetComponent<BumpPieChartMeshController> ();
 	}
 
 		void OnTriggerEnter2D(Collider2D other)
@@ -29,7 +33,7 @@ public class transportBackUp : MonoBehaviour {
 		//location
 		//Get position y of ball.
 		endPositionY = transform.position.y;
-		Debug.Log ("End Position Y: "+endPositionY);
+//		Debug.Log ("End Position Y: "+endPositionY);
 		//Get Height different between ball and floor
 		float height = endPositionY - bottomFloorHeight;
 		//Add Height between ball and floor to Y Starting position.
@@ -56,6 +60,8 @@ public class transportBackUp : MonoBehaviour {
 			}
 
 		bumpScript.enterTrigger = true;
+		pieChartScript.enterTrigger = true;
+		BumpChartScript.enterTrigger = true;
 
 		}
 

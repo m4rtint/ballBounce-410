@@ -45,7 +45,7 @@ public class resizeBump : MonoBehaviour {
 				//850 lines becomes 8, 2 sig fig
 				scale = int.Parse(testData[2])/10;
 				oneScale = Mathf.Round (scale * 1.000f) / 1.000f;
-				Debug.Log(oneScale);
+				//Debug.Log(oneScale);
 				dataIndex++;
 				
 			}

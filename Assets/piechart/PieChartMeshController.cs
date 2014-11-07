@@ -1,12 +1,20 @@
 ﻿using UnityEngine;
+using System.Collections;
 
 public class PieChartMeshController : MonoBehaviour
 {
     PieChartMesh mPieChart;
     float[] mData;
 
+	//Grabbing Data from dataReader Class
+	int incrementOnce = 0;
+	dataReader ballScript;
+	ArrayList allData = new ArrayList();
+	//=====================
+
     void Start()
     {
+		ballScript = GameObject.Find ("leftwall").GetComponent<dataReader> ();
         mPieChart = gameObject.AddComponent("PieChartMesh") as PieChartMesh;
         if (mPieChart != null)
         {

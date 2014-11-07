@@ -9,11 +9,18 @@ public class transportBackUp : MonoBehaviour {
 	public static float startFloorHeight = 19.6f;
 	float scale = 5.0f;
 	double oneScale;
+	int dataIndex = 1;
 
-	resizeBump otherScript;
+	//Grabbing Data from dataReader Class
+	int incrementOnce = 0;
+	dataReader ballScript;
+	ArrayList allData = new ArrayList();
+	//=====================
+	resizeBump bumpScript;
+
 	void Start(){
-
-		otherScript = GameObject.Find ("bump").GetComponent<resizeBump> ();
+		ballScript = GameObject.Find ("leftwall").GetComponent<dataReader> ();
+		bumpScript = GameObject.Find ("bump").GetComponent<resizeBump> ();
 	}
 
 		void OnTriggerEnter2D(Collider2D other)
@@ -31,27 +38,38 @@ public class transportBackUp : MonoBehaviour {
 		transform.position = new Vector2 (ballX, ballY);
 
 		//size
-		scale = Random.Range (5.0f, 25.0f);
-		oneScale = Mathf.Round (scale * 1.000f)/1.000f ;
 
+		//Grabbing Data - Resizing the ball
+		if (dataIndex < allData.Count) 
+			{
+				string[] testData = (string[])allData [dataIndex];	
+				//Debug.Log (testData [0]);
+				
+				//All this is editable
+				//200 lines becomes size 2
+				//850 lines becomes 8, 2 sig fig
+				scale = int.Parse(testData[0])/100;
+				oneScale = Mathf.Round (scale * 1.000f) / 1.000f;
+				//Debug.Log(oneScale);
+				dataIndex++;
 
-		otherScript.enterTrigger = true;
+			}
+
+		bumpScript.enterTrigger = true;
 
 		}
 
-	/*void colourMesh(int n){
-		var mesh : Mesh = GetComponent(MeshFilter).mesh;
-		var vertices : Vector3[] = mesh.vertices;
-		var colors : Color[] = new Color[vertices.Length];
 
-		for (var i = 0; i < vertices.Length;i++)
-			colors[i] = Color.Lerp(Color.red, Color.green, vertices[i].y);
-
-		mesh.colors = colors;
-	}
-	*/
-
-	void Update(){
+	void Update()
+	{	
+		//Get all Data from dataReader one time
+		if(incrementOnce < 10)
+		{	
+			if(incrementOnce == 9 )
+				allData = ballScript.get_data();
+			incrementOnce++;
+		}
+	
 				if (transform.localScale.x != scale) {
 						if (transform.localScale.x < oneScale) {
 								transform.localScale += new Vector3 (0.1f, 0.1f, 0.0f);

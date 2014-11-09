@@ -4,11 +4,19 @@
 #
 #Script takes the two git projects as input and produces two output text files.
 #
+#OUTPUT DESCRIPTION
 #Output consists of two lines per commit. The first line shows the number of lines
 #of code currently in the project. The second line will have the number of 
 #checkstyle errors found, the commit sha1 hash, and the author's name separated by
 #single spaces. Fortunately, all the values required can be found from the output 
 #information.
+#
+#NOTE
+#Checkstyle outputs the two lines
+#Starting audit...
+#Audit done.
+#at the beginning and end of every audit. This explains the two lines counted when
+#auditing the first commits of team-04 when no java lines are counted.
 #
 #RUN DIRECTIONS
 #Navigate to directory containing git repos, have both repos available

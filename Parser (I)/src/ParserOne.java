@@ -22,12 +22,17 @@ public class ParserOne {
 	private HashMap<Integer, String[]> breakSeq;
 	private String[] outputs;
 	private int blocks;
+	private HashMap<String, Integer[]> contributors;
+	private int lastErrors;
+	private int lastTot;
 	
 	
 	public ParserOne(){
 		fileName = null;
 		inputFile = new Vector<String>();
 		breakSeq = new HashMap<Integer, String[]>();
+		lastErrors = 0;
+		lastTot = 0;
 	}
 	
 	private void ReadFile() throws IOException{
@@ -55,12 +60,17 @@ public class ParserOne {
 		BreakInput();
 		//create lines of stats in desired format and save it as strings
 		FillOutputs();
+		//write to a text file called output.txt
+		WriteFile();
 	}
 	
 	private void FillOutputs(){
 		int current = 1;
 		int start = 0;
 		String[] splitStat;
+		String name;
+		String linesTot = "NA";
+		int errors = 0;
 		while(current <= blocks){
 			if(start > 29)
 			{
@@ -69,8 +79,64 @@ public class ParserOne {
 			String[] blockStat = breakSeq.get(current);
 			while(start < blockStat.length){
 				splitStat = blockStat[start].split(" ");
+				name = splitStat[splitStat.length-1];
+				name = name.toLowerCase();
+				name = name.replace(".txt", "");
+				linesTot = blockStat[start+1];
+				int totalLines = Integer.parseInt(linesTot);
+				errors = Integer.parseInt(splitStat[1]);
+				int difference = errors - lastErrors;
+				int totDiff = totalLines - lastTot;
+				Integer[] intArray = {0,0};
+				
+				if(contributors.get(name) != null){
+					contributors.put(name, intArray);
+				}
+				
+				intArray = contributors.get(name);
+				
+				if(totDiff != 0){
+					if(contributors.get(name) != null){
+						int newLOT = contributors.get(name)[0] + difference;
+						intArray[0] = newLOT;
+						contributors.put(name, intArray);
+					}
+				}
+				
+				if(difference != 0){
+					if(contributors.get(name) != null){
+						int newLOE = contributors.get(name)[1] + difference;
+						intArray[1] = newLOE;
+						contributors.put(name, intArray);
+					}
+				}
+
+				lastErrors = errors;
+				lastTot = totalLines;
+				
 				start+=2;
 			}
+			outputs = new String[blocks];
+			String write = linesTot + "-----" + contributors.size() + ",";
+			int i = 0;
+			for(Integer[] array: contributors.values()){
+				if(contributors.size()-1 == i){
+					write = write + array[0] + "-----";
+				}else{
+					write = write + array[0] + ",";
+				}
+				i++;
+			}
+			write = write + errors + "-----" + contributors.size() + ",";
+			for(Integer[] array: contributors.values()){
+				if(contributors.size()-1 == i){
+					write = write + array[1];
+				}else{
+					write = write + array[1] + ",";
+				}
+				i++;
+			}
+			outputs[current] = write;
 			current++;
 		}
 	}
@@ -84,7 +150,6 @@ public class ParserOne {
 		{
 			blocks++;
 		}
-		outputs = new String[blocks];
 		while(blocks >= seq){
 			if(blocks == seq){
 				if(remain > 14){
@@ -113,8 +178,8 @@ public class ParserOne {
 	
 	private void WriteFile(){
 		 try (BufferedWriter writer = new BufferedWriter(new FileWriter("output.txt"))) {			
-			for(int i = 0; i < inputFile.size(); i++){
-				writer.write(inputFile.get(i));
+			for(int i = 0; i < outputs.length; i++){
+				writer.write(outputs[i]);
 				writer.newLine();
 			}
 		} catch (IOException e1) {

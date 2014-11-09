@@ -1,36 +1,3 @@
-438
-223 45783e0 Ryan.txt
-386
-171 cd3c654 Ryan.txt
-294
-65 2af53a6 Ryan.txt
-306
-96 1584eba Kaya Gajos.txt
-306
-96 878530f Kaya Gajos.txt
-261
-47 926ae6b Ryan.txt
-0
-2 4a69a71 Ryan.txt
-0
-2 cf0754d Ryan.txt
-0
-2 e543914 whitecat.txt
-0
-2 827d449 tsebens.txt
-0
-2 e98b3bd Tristan Sebens.txt
-0
-2 55905e5 kgajos.txt
-0
-2 2021677 achowchow.txt
-0
-2 1c44cbd ryanabooth.txt
-0
-2 e5f1857 Kaya Gajos.txt
-0
-2 47acb13 Kaya Gajos.txt
-0
-2 d480bae Kaya Gajos.txt
-0
-2 ffd1e9a Ryan.txt
+306-----8,0,45,0,0,0,0,49,0-----94-----8,0,45,0,0,0,0,49,0,
+785-----8,42,178,0,0,60,94,149,0-----523-----8,42,178,0,0,60,94,149,0,
+1310-----10,111,348,0,0,38,60,94,149,0,187-----991-----10,115,348,0,0,38,60,94,149,0,187,

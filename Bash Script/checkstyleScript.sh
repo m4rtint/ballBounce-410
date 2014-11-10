@@ -65,12 +65,13 @@ cd libgdx
 git checkout -q master
 git log --pretty="%h %ae" -180 --first-parent > ../commits.txt
 rm libgdx.txt
-rm -rf ../srcagg
 mkdir ../srcagg
 while read line
 do
 array=($line)
 git checkout -q "${array[0]}"
+rm -rf ../srcagg
+mkdir ../srcagg
 find . -type f -name '*.java' -exec cp {} ../srcagg/ \;
 cd ..
 java -jar checkstyle-6.0-all.jar -c sun_checks.xml -r srcagg > "$line".txt

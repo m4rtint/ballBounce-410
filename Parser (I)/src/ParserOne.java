@@ -3,6 +3,7 @@ import java.io.BufferedWriter;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Vector;
 
@@ -20,7 +21,7 @@ public class ParserOne {
 	private static Vector<String> inputFile;
 	private String fileName;
 	private HashMap<Integer, String[]> breakSeq;
-	private String[] outputs;
+	private ArrayList<String> outputs;
 	private int blocks;
 	private HashMap<String, Integer[]> contributors;
 	private int lastErrors;
@@ -31,8 +32,11 @@ public class ParserOne {
 		fileName = null;
 		inputFile = new Vector<String>();
 		breakSeq = new HashMap<Integer, String[]>();
+		contributors = new HashMap<String, Integer[]>();
 		lastErrors = 0;
 		lastTot = 0;
+		outputs = new ArrayList<String>();
+		blocks = 5;
 	}
 	
 	private void ReadFile() throws IOException{
@@ -72,39 +76,43 @@ public class ParserOne {
 		String linesTot = "NA";
 		int errors = 0;
 		while(current <= blocks){
-			if(start > 29)
-			{
-				start = 0;
-			}
+			start = 0;
 			String[] blockStat = breakSeq.get(current);
 			while(start < blockStat.length){
+				//System.out.println("values: " + blockStat[start]);
+				//System.out.println("blockstat length: " + blockStat.length);
+				//System.out.println("number of blocks: " + blocks);
+				//System.out.println("current line in block: " + start);
 				splitStat = blockStat[start].split(" ");
 				name = splitStat[splitStat.length-1];
 				name = name.toLowerCase();
 				name = name.replace(".txt", "");
+				//System.out.println("value of entering index: " + start);
+				//System.out.println(blockStat.length);
 				linesTot = blockStat[start+1];
+				//System.out.println("total number of lines: " + linesTot);
 				int totalLines = Integer.parseInt(linesTot);
-				errors = Integer.parseInt(splitStat[1]);
+				errors = Integer.parseInt(splitStat[0])-2;
 				int difference = errors - lastErrors;
 				int totDiff = totalLines - lastTot;
 				Integer[] intArray = {0,0};
 				
-				if(contributors.get(name) != null){
+				if(!contributors.containsKey(name)){
 					contributors.put(name, intArray);
 				}
 				
 				intArray = contributors.get(name);
 				
 				if(totDiff != 0){
-					if(contributors.get(name) != null){
-						int newLOT = contributors.get(name)[0] + difference;
+					if(contributors.containsKey(name)){
+						int newLOT = contributors.get(name)[0] + totDiff;
 						intArray[0] = newLOT;
 						contributors.put(name, intArray);
 					}
 				}
 				
 				if(difference != 0){
-					if(contributors.get(name) != null){
+					if(contributors.containsKey(name)){
 						int newLOE = contributors.get(name)[1] + difference;
 						intArray[1] = newLOE;
 						contributors.put(name, intArray);
@@ -116,7 +124,6 @@ public class ParserOne {
 				
 				start+=2;
 			}
-			outputs = new String[blocks];
 			String write = linesTot + "-----" + contributors.size() + ",";
 			int i = 0;
 			for(Integer[] array: contributors.values()){
@@ -128,6 +135,7 @@ public class ParserOne {
 				i++;
 			}
 			write = write + errors + "-----" + contributors.size() + ",";
+			i = 0;
 			for(Integer[] array: contributors.values()){
 				if(contributors.size()-1 == i){
 					write = write + array[1];
@@ -136,41 +144,63 @@ public class ParserOne {
 				}
 				i++;
 			}
-			outputs[current] = write;
+			//System.out.println("Current block: " + current);
+			//System.out.println("created line: " + write);
+			outputs.add(write);
 			current++;
 		}
 	}
 	
 	private void BreakInput(){
-		blocks = inputFile.size()/30;
-		int remain = inputFile.size()%30;
+//		blocks = inputFile.size()/30;
+//		int remain = inputFile.size()%30;
+//		int seq = 1;
+//		int index = inputFile.size()-1;
+//		if(remain > 14)
+//		{
+//			blocks++;
+//		}
+//		while(blocks >= seq){
+//			if(blocks == seq){
+//				if(remain > 14){
+//					PutToHash(index, seq, remain);
+//				}
+//				PutToHash(index, seq, remain+30);
+//				break;
+//			}
+//			PutToHash(index, seq, 30);
+//			index = index-30;
+//			seq++;
+//		}		
+		
 		int seq = 1;
+		int blockSize = (inputFile.size()/10)*2;
+		int remain = inputFile.size() - 4*blockSize;
+		//System.out.println("remain value: " + remain);
 		int index = inputFile.size()-1;
-		if(remain > 14)
-		{
-			blocks++;
-		}
 		while(blocks >= seq){
 			if(blocks == seq){
-				if(remain > 14){
-					PutToHash(index, seq, remain);
-				}
-				PutToHash(index, seq, remain+30);
+				PutToHash(index, seq, remain);
 				break;
+			}else{
+				PutToHash(index, seq, blockSize);
 			}
-			PutToHash(index, seq, 30);
-			index = index-30;
+			index = index - blockSize;
 			seq++;
-		}		
+		}
 	}
 	
 	private void PutToHash(int index, int seq, int size){
+		//System.out.println("size of block " + seq + ": " + size);
 		String[] commits = new String[size];
-		int end = index-30;
-		System.out.println(seq);
+		int end = index-size;
+		//System.out.println("block number: " + seq);
 		for(int i = 0; index > end; index--){
-			System.out.println(inputFile.get(index));
+			//System.out.println(inputFile.get(index));
+			//System.out.println("commit aray index number: " + i);
+			//System.out.println(index);
 			commits[i] = inputFile.get(index);
+			//System.out.println("line being saved: " + commits[i]);
 			i++;
 		}
 		breakSeq.put(seq, commits);
@@ -178,8 +208,9 @@ public class ParserOne {
 	
 	private void WriteFile(){
 		 try (BufferedWriter writer = new BufferedWriter(new FileWriter("output.txt"))) {			
-			for(int i = 0; i < outputs.length; i++){
-				writer.write(outputs[i]);
+			for(int i = 0; i < outputs.size(); i++){
+				//System.out.println("print out writes: " + outputs.get(i));
+				writer.write(outputs.get(i));
 				writer.newLine();
 			}
 		} catch (IOException e1) {
@@ -194,7 +225,8 @@ public class ParserOne {
 		parser.setFileName(args[0]);
 		try {
 			parser.ReadFile();
-			parser.BreakInput();
+			//parser.BreakInput();
+			parser.Interp();
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			System.out.println("something is wrong");

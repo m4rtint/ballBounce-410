@@ -1,0 +1,18 @@
+Sample 1 tests
+---------------
+Multiple of 5
+increase in error
+- test main functionality
+
+Sample 2 tests
+---------------
+Not multiple of 5
+decrease in error
+small subset
+- test for is non multiple are supported
+- test detect small
+
+Sample 3 tests
+---------------
+arbitrary with large increase and decrease
+- to test detection of large increase and decrease

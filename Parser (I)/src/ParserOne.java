@@ -5,6 +5,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.LinkedList;
 import java.util.Vector;
 
 public class ParserOne {
@@ -22,10 +23,11 @@ public class ParserOne {
 	private String fileName;
 	private HashMap<Integer, String[]> breakSeq;
 	private ArrayList<String> outputs;
-	private int blocks;
+	static final private int BLOCKS = 5;
 	private HashMap<String, Integer[]> contributors;
 	private int lastErrors;
 	private int lastTot;
+	private LinkedList<String> order;
 	
 	
 	public ParserOne(){
@@ -36,7 +38,7 @@ public class ParserOne {
 		lastErrors = 0;
 		lastTot = 0;
 		outputs = new ArrayList<String>();
-		blocks = 5;
+		order = new LinkedList<String>();
 	}
 	
 	private void ReadFile() throws IOException{
@@ -75,7 +77,8 @@ public class ParserOne {
 		String name;
 		String linesTot = "NA";
 		int errors = 0;
-		while(current <= blocks){
+//		int b = 1;
+		while(current <= BLOCKS){
 			start = 0;
 			String[] blockStat = breakSeq.get(current);
 			while(start < blockStat.length){
@@ -87,6 +90,10 @@ public class ParserOne {
 				name = splitStat[splitStat.length-1];
 				name = name.toLowerCase();
 				name = name.replace(".txt", "");
+				//System.out.println("Name: " + name);
+				if(!order.contains(name)){
+					order.addLast(name);	
+				}
 				//System.out.println("value of entering index: " + start);
 				//System.out.println(blockStat.length);
 				linesTot = blockStat[start+1];
@@ -124,30 +131,42 @@ public class ParserOne {
 				
 				start+=2;
 			}
-			String write = linesTot + "-----" + contributors.size() + ",";
+			String write = linesTot + " " + order.size() + ",";
 			int i = 0;
-			for(Integer[] array: contributors.values()){
-				if(contributors.size()-1 == i){
-					write = write + array[0] + "-----";
+			for(String theName: order){
+				if(order.size()-1 == i){
+					write = write + contributors.get(theName)[0] + " ";
 				}else{
-					write = write + array[0] + ",";
+					write = write + contributors.get(theName)[0] + ",";
 				}
 				i++;
 			}
-			write = write + errors + "-----" + contributors.size() + ",";
+			write = write + errors + " " + order.size() + ",";
 			i = 0;
-			for(Integer[] array: contributors.values()){
+			for(String theName: order){
 				if(contributors.size()-1 == i){
-					write = write + array[1];
+					write = write + contributors.get(theName)[1];
 				}else{
-					write = write + array[1] + ",";
+					write = write + contributors.get(theName)[1] + ",";
 				}
 				i++;
 			}
+//			i = 1;
+//			for(String theName: contributors.keySet()){
+//				System.out.println("block " + b + " person " + i + ": " + theName);
+//				int a = 1;
+//				for(String n: order){
+//					System.out.println("Name " + a + " : " + n);
+//					a++;
+//				}
+//				i++;
+//			}
+			
 			//System.out.println("Current block: " + current);
 			//System.out.println("created line: " + write);
 			outputs.add(write);
 			current++;
+//			b++;
 		}
 	}
 	
@@ -178,8 +197,8 @@ public class ParserOne {
 		int remain = inputFile.size() - 4*blockSize;
 		//System.out.println("remain value: " + remain);
 		int index = inputFile.size()-1;
-		while(blocks >= seq){
-			if(blocks == seq){
+		while(BLOCKS >= seq){
+			if(BLOCKS == seq){
 				PutToHash(index, seq, remain);
 				break;
 			}else{

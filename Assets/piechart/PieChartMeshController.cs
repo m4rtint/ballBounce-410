@@ -69,7 +69,6 @@ public class PieChartMeshController : MonoBehaviour
 			{
 			string[] testData = (string[])allData[dataIndex];
 			mData = getDataFromString(testData[1]);
-			Debug.Log (testData[1]);
 			dataIndex++;
 			mPieChart.Draw(mData);
 			}
@@ -83,7 +82,7 @@ public class PieChartMeshController : MonoBehaviour
     float[] getDataFromString(string data)
     {
 		string[] stringTargets = data.Split(',');
-		float[] targets = new float[int.Parse(stringTargets[0])];
+		float[] targets = new float[10];
 		// length-1 because need to ignore the number 
 		// of people in the first element of array
 		for (int x = 0; x < stringTargets.Length-1; x++) 
@@ -93,7 +92,7 @@ public class PieChartMeshController : MonoBehaviour
 			//e.g. 5,10,100,20,30,20 so 5 would be number of people
 			//all numbers followed are the lines of code by each person
 			targets[x] = int.Parse(stringTargets[x+1]);
-			//Debug.Log(targets[x]);
+			Debug.Log(targets[x]);
 		}
 
         return targets;

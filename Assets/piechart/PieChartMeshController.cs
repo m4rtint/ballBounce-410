@@ -82,7 +82,7 @@ public class PieChartMeshController : MonoBehaviour
     float[] getDataFromString(string data)
     {
 		string[] stringTargets = data.Split(',');
-		float[] targets = new float[10];
+		float[] targets = new float[int.Parse (stringTargets[0])];
 		// length-1 because need to ignore the number 
 		// of people in the first element of array
 		for (int x = 0; x < stringTargets.Length-1; x++) 

@@ -49,13 +49,13 @@
      <Compile Include="Assets\Scripts\camera.cs" />
      <Compile Include="Assets\Scripts\resizeBump.cs" />
      <Compile Include="Assets\Scripts\transportBackUp.cs" />
-     <Compile Include="Assets\Scripts\updateSize.cs" />
      <Compile Include="Assets\dataReader.cs" />
      <Compile Include="Assets\piechart\BumpPieChartMeshController.cs" />
      <Compile Include="Assets\piechart\Mesh\BumpPieChartMesh.cs" />
      <Compile Include="Assets\piechart\Mesh\PieChartMesh.cs" />
      <Compile Include="Assets\piechart\PieChartMeshController.cs" />
      <None Include="Assets\ballData.txt" />
+     <None Include="Assets\EduData-stat.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

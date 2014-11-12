@@ -86,7 +86,7 @@ public class ParserOne {
 				//System.out.println("blockstat length: " + blockStat.length);
 				//System.out.println("number of blocks: " + blocks);
 				//System.out.println("current line in block: " + start);
-				splitStat = blockStat[start].split(" ");
+				splitStat = blockStat[start].trim().split(" ");
 				name = splitStat[splitStat.length-1];
 				name = name.toLowerCase();
 				name = name.replace(".txt", "");
@@ -97,6 +97,7 @@ public class ParserOne {
 				//System.out.println("value of entering index: " + start);
 				//System.out.println(blockStat.length);
 				linesTot = blockStat[start+1];
+				linesTot = linesTot.replace(" ", "");
 				//System.out.println("total number of lines: " + linesTot);
 				int totalLines = Integer.parseInt(linesTot);
 				errors = Integer.parseInt(splitStat[0])-2;

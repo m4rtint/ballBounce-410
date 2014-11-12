@@ -4,7 +4,7 @@ using System.Text;
 using System.IO;  
 
 public class dataReader : MonoBehaviour {
-	public string file = "solution1";
+	public string file = "EduData-stat";
 
 	void Start(){
 		Load ("Assets/"+file+".txt");
@@ -44,7 +44,10 @@ public class dataReader : MonoBehaviour {
 						{
 					//	Debug.Log("The line was read");
 						ballData.Add(entries);
-
+						//Debug.Log (entries[0]);
+						Debug.Log (entries[1]);
+						//Debug.Log (entries[2]);
+						//Debug.Log (entries[3]);
 
 						}
 

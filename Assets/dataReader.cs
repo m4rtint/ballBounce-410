@@ -4,9 +4,10 @@ using System.Text;
 using System.IO;  
 
 public class dataReader : MonoBehaviour {
+	public string file = "solution1";
 
 	void Start(){
-		Load ("Assets/ballData.txt");
+		Load ("Assets/"+file+".txt");
 	}
 
 

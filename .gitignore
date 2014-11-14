@@ -45,5 +45,4 @@ Temporary Items
 *.csproj
 *.sln
 *.userprefs
-library/*
 *.dwlt

@@ -45,7 +45,7 @@ public class dataReader : MonoBehaviour {
 					//	Debug.Log("The line was read");
 						ballData.Add(entries);
 						//Debug.Log (entries[0]);
-						Debug.Log (entries[1]);
+						//Debug.Log (entries[1]);
 						//Debug.Log (entries[2]);
 						//Debug.Log (entries[3]);
 

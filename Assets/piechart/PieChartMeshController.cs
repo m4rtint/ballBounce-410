@@ -92,7 +92,7 @@ public class PieChartMeshController : MonoBehaviour
 			//e.g. 5,10,100,20,30,20 so 5 would be number of people
 			//all numbers followed are the lines of code by each person
 			targets[x] = int.Parse(stringTargets[x+1]);
-			Debug.Log(targets[x]);
+			//Debug.Log(targets[x]);
 		}
 
         return targets;

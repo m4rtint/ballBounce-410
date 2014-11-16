@@ -25,10 +25,10 @@ Unity Testing:
 	
 	FlyTime counter: To test the counter, to see if it was starting the timer up at the right time, we used 
 	Unity's Debug log, where values would get would get printed out in the log, and displayed in the terminal.
-	Utilizing this feature, we were able to determine if code wasn't being reached. For the counter, the Debug log
-	was very helpful (currently most of the debug log is commented out) because it helped us determine if the ball
-	was still grounded. We were able to verify that the ball was grounded by watching the demo video that Unity
-	provides when running .Unity projects. 
+	Utilizing this feature, we were able to determine if code wasn't being reached. For the counter, the Debug 
+	log was very helpful (currently most of the debug log is commented out) because it helped us determine 
+	if the ball was still grounded. We were able to verify that the ball was grounded by watching the demo video
+	that Unity provides when running .Unity projects. 
 
 
 

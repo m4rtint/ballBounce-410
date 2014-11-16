@@ -1,4 +1,0 @@
-#!bin/bash
-
-#Script selects certain commits from the projects and sees if the output matches 
-#the the checked output values. 

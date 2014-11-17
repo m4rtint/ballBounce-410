@@ -20,7 +20,7 @@ Unity Testing:
 	same amount in contribution. (image:http://i.imgur.com/RrQnbkN.jpg). With more dumby data, we tested to see 
 	what it would look like with different contributions from each user. (image: http://i.imgur.com/ULC8HyW.jpg)
 	
-	Bump: For the bump, we did the exact same thing as the ball, however, we applied the cuts on a different
+Bump: For the bump, we did the exact same thing as the ball, however, we applied the cuts on a different
 	gameobject, making the only difference is, instead of a full circle, we have a semi-circle.
 	
 	FlyTime counter: To test the counter, to see if it was starting the timer up at the right time, we used 

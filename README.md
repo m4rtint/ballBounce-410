@@ -16,8 +16,10 @@ Bash Script Testing:
 
 Unity Testing:
 
-DataReader: Created a script to read txt files passed to Unity. Used Debug.Log to test if the text file was 
-	really being read......TODO
+DataReader: Created a script to read .txt files passed to Unity. Used Debug.Log to test if the text file was really 
+	being read. Parsed each line of text within the text file into a string, then printed out each line onto the 
+	console using Debug.Log. Matchup each line of data with each line on the text file given to us. If they all 
+	match, then it means that the data has been saved.
 	
 Ball: Created dumby data so that we are able to determine if the ball was growing and splitting into the 
 	correct number of slices. To test the splits, we gave in the values to represent 1 user, and 4 users. This 
@@ -33,21 +35,7 @@ FlyTime counter: To test the counter, to see if it was starting the timer up at 
 	Utilizing this feature, we were able to determine if code wasn't being reached. For the counter, the Debug 
 	log was very helpful (currently most of the debug log is commented out) because it helped us determine 
 	if the ball was still grounded. We were able to verify that the ball was grounded by watching the demo video
-	that Unity provides when running .Unity projects. 
-
-
-
-=====================TEAM NOTES===================================
-
-Need input from bash file like this (based on every 5 commits)?
-
-Lines-----------# of People&lines---------Bump size (errors)--------People error/line
-
-200-------------1,200---------------------10------------------------1,10
-
-2000------------5,200,400,100,1000,200----200-----------------------5,1,0,2,3,194
-			
-			
-			
-			
+	that Unity provides when running .Unity projects. For the Debug log, when testing to determine if the ball
+	was grounded, we made it output "Is grounded," as soon as it is off the ground, we made the visual output
+	pause, and have the log display "In the air." (image: http://i.imgur.com/C4VcdaL.jpg).
 

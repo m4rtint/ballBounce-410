@@ -23,7 +23,7 @@ Unity Testing:
 Bump: For the bump, we did the exact same thing as the ball, however, we applied the cuts on a different
 	gameobject, making the only difference is, instead of a full circle, we have a semi-circle.
 	
-	FlyTime counter: To test the counter, to see if it was starting the timer up at the right time, we used 
+FlyTime counter: To test the counter, to see if it was starting the timer up at the right time, we used 
 	Unity's Debug log, where values would get would get printed out in the log, and displayed in the terminal.
 	Utilizing this feature, we were able to determine if code wasn't being reached. For the counter, the Debug 
 	log was very helpful (currently most of the debug log is commented out) because it helped us determine 

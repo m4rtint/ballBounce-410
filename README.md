@@ -16,6 +16,12 @@ DataReader: Created a script to read .txt files passed to Unity. Used Debug.Log 
 	console using Debug.Log. Matchup each line of data with each line on the text file given to us. If they all 
 	match, then it means that the data has been saved.
 	
+Obtaining Data from another Script:
+	The DataReader.cs Script saves all the data read from the given text file into an ArrayList, had to check if 
+	the data was accessible from another script. e.g.  transportBackup.cs, resizeBump.cs….etc. So to check if the 
+	data was taken,	used Debug.Log and print out values from the first index of the arrayList, which should be the
+	first line of data from	the text file given to us.
+	
 Ball: Created dumby data so that we are able to determine if the ball was growing and splitting into the 
 	correct number of slices. To test the splits, we gave in the values to represent 1 user, and 4 users. This 
 	give us the output of a solid ball, and a ball with 4 different coloured slices, where all users did the

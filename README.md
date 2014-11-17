@@ -1,12 +1,7 @@
-ballBounce-410
-==============
+========CPSC 410 Project W01 2014========
 
-Proper Project of ball Counce
-
-CPSC 410 Project
-Sample output image -> ballBounce-410/output image
-
-Raymond Lee, Ronald Lam, Robin Or, Martin Tsang
+Team: GG-LA
+Members: Ronald Lam 40815094, Pak Hong Or 43221118, Martin Tsang 41611112, Raymond Lee 35832112
 
 =====================Testing===================================
 

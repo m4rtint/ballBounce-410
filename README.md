@@ -16,19 +16,19 @@ Bash Script Testing:
 
 Unity Testing:
 
-	DataReader: Created a script to read txt files passed to Unity. Used Debug.Log to test if the text file was 
+DataReader: Created a script to read txt files passed to Unity. Used Debug.Log to test if the text file was 
 	really being read......TODO
 	
-	Ball: Created dumby data so that we are able to determine if the ball was growing and splitting into the 
+Ball: Created dumby data so that we are able to determine if the ball was growing and splitting into the 
 	correct number of slices. To test the splits, we gave in the values to represent 1 user, and 4 users. This 
 	give us the output of a solid ball, and a ball with 4 different coloured slices, where all users did the
 	same amount in contribution. (image:http://i.imgur.com/RrQnbkN.jpg). With more dumby data, we tested to see 
 	what it would look like with different contributions from each user. (image: http://i.imgur.com/ULC8HyW.jpg)
 	
-	Bump: For the bump, we did the exact same thing as the ball, however, we applied the cuts on a different
+Bump: For the bump, we did the exact same thing as the ball, however, we applied the cuts on a different
 	gameobject, making the only difference is, instead of a full circle, we have a semi-circle.
 	
-	FlyTime counter: To test the counter, to see if it was starting the timer up at the right time, we used 
+FlyTime counter: To test the counter, to see if it was starting the timer up at the right time, we used 
 	Unity's Debug log, where values would get would get printed out in the log, and displayed in the terminal.
 	Utilizing this feature, we were able to determine if code wasn't being reached. For the counter, the Debug 
 	log was very helpful (currently most of the debug log is commented out) because it helped us determine 

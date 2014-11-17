@@ -7,6 +7,13 @@ Members: Ronald Lam 40815094, Pak Hong Or 43221118, Martin Tsang 41611112, Raymo
 
 Bash Script Testing:
 
+Tests are found in the 'Test Scripts' folder with full instructions in each file.
+
+smallProjectTest.sh: Runs a version of checkstyleScript.sh on a smaller project not used in our analysis
+
+cherryPickTest.sh: Runs the copy mechanism used in the big project on some sample commits and make sure they match up
+
+fusionTest.sh: Ensures the compilation and running of the Java code in Parser (I) works
 
 
 Unity Testing:
@@ -22,10 +29,10 @@ Obtaining Data from another Script:
 	data was taken,	used Debug.Log and print out values from the first index of the arrayList, which should be the
 	first line of data from	the text file given to us.
 	
-Ball: Created dumby data so that we are able to determine if the ball was growing and splitting into the 
+Ball: Created dummy data so that we are able to determine if the ball was growing and splitting into the 
 	correct number of slices. To test the splits, we gave in the values to represent 1 user, and 4 users. This 
 	give us the output of a solid ball, and a ball with 4 different coloured slices, where all users did the
-	same amount in contribution. (image:http://i.imgur.com/RrQnbkN.jpg). With more dumby data, we tested to see 
+	same amount in contribution. (image:http://i.imgur.com/RrQnbkN.jpg). With more dummy data, we tested to see 
 	what it would look like with different contributions from each user. (image: http://i.imgur.com/ULC8HyW.jpg)
 	
 Bump: For the bump, we did the exact same thing as the ball, however, we applied the cuts on a different

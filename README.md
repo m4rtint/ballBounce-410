@@ -16,7 +16,8 @@ Bash Script Testing:
 
 Unity Testing:
 
-	DataReader: Created a script to read txt files passed to Unity. Used Debug.Log to test if the text file was really 		being read......TODO
+	DataReader: Created a script to read txt files passed to Unity. Used Debug.Log to test if the text file was 
+	really being read......TODO
 	
 	Ball: Created dumby data so that we are able to determine if the ball was growing and splitting into the 
 	correct number of slices. To test the splits, we gave in the values to represent 1 user, and 4 users. This 

@@ -11,7 +11,7 @@ public class ball_trigger_cs : MonoBehaviour {
 		if (col.gameObject.tag == "EditorOnly") {
 			//Debug.Log("hit the floor");  
 			inAirInd = false;
-			//Debug.Log (inAirInd);
+			Debug.Log (inAirInd);
 			//counter.inAir = inAirInd;
 		}
 	}
@@ -19,9 +19,9 @@ public class ball_trigger_cs : MonoBehaviour {
 	void OnCollisionExit2D(Collision2D  col){
 		
 		if (col.gameObject.tag == "EditorOnly") {
-			//Debug.Log("in air");  
+			Debug.Log("in air");  
 			inAirInd = true;
-			//Debug.Log (inAirInd);
+			Debug.Log (inAirInd);
 			//counter.inAir = inAirInd;
 		}
 	}

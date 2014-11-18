@@ -40,7 +40,13 @@ public class transportBackUp : MonoBehaviour {
 		ballY = startFloorHeight + height;
 		//Change Position of ball up
 		transform.position = new Vector2 (ballX, ballY);
+		transform.position = new Vector2 (87.98248f,41.29656f);
 
+		//Test out if velocity zeroes out
+		//rigidbody2D.velocity = Vector3.zero;
+		rigidbody2D.angularVelocity = 0;
+
+		rigidbody2D.velocity = Vector2.zero;
 		//size
 
 		//Grabbing Data - Resizing the ball
@@ -52,8 +58,8 @@ public class transportBackUp : MonoBehaviour {
 				//All this is editable
 				//200 lines becomes size 2
 				//850 lines becomes 8, 2 sig fig
-				scale = int.Parse(testData[0])/100;
-				oneScale = Mathf.Round (scale * 1.000f) / 1.000f;
+			scale = Mathf.Sqrt(Mathf.Sqrt(int.Parse(testData[0])));
+				oneScale = Mathf.Round (scale * 10.0f) / 10.0f;
 				//Debug.Log(oneScale);
 				dataIndex++;
 

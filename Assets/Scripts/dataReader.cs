@@ -7,7 +7,7 @@ public class dataReader : MonoBehaviour {
 	public string file = "EduData-stat";
 
 	void Start(){
-		Load ("Assets/"+file+".txt");
+		Load (file+".txt");
 	}
 
 

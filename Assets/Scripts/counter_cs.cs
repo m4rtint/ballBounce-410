@@ -15,7 +15,7 @@ public class counter_cs : MonoBehaviour {
 		inAir = ball_trigger_cs.inAirInd;
 		if(inAir){
 			Counter += Time.deltaTime;
-			Debug.Log (Counter);
+//			Debug.Log (Counter);
 			guiText.text = "Air Time :" + Counter+" s"+history;
 		}else{
 			if(Counter>0.1)

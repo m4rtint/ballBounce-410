@@ -62,3 +62,12 @@ FlyTime counter: To test the counter, to see if it was starting the timer up at 
 	was grounded, we made it output "Is grounded," as soon as it is off the ground, we made the visual output
 	pause, and have the log display "In the air." (image: http://i.imgur.com/C4VcdaL.jpg).
 
+Parser Testing:
+
+The test files can be dound in the src folder of the Parser(I) project. The test text files are sample1, sample2 and sample3. Each test text file have a corresponding output and it contains the expected output. Be aware that I made changes to the parser for the big project libgdx, so it may cause difference in the output for the test text files.
+
+Sample1: This text file contains the first 100 lines of data from the small project, which is the project called Edu-Data done by team-04. This test can be divided into 5 blocks so certain characteristics should comply. To check the characteristics, I have added prints in the parser to make sure the parser is working correctly.
+
+Sample2: Another proper subset of the project but this file contains lines that increase and decrease in size and this file cannot be divided into 5 equal blocks. I have added different print statements to check these statistics and can be found in the parser class.
+
+Sample3: A simple and easy example to follow, so I can make sure the values that the parser is producing is correct. Again, print statements are added to check the output is correct.

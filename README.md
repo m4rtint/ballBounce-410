@@ -7,7 +7,8 @@ Members: Ronald Lam 40815094, Pak Hong Or 43221118, Martin Tsang 41611112, Raymo
 
 Bash Script Testing:
 
-Tests are found in the 'Test Scripts' folder with full instructions in each file.
+Tests are found in the 'Test Scripts' folder with full instructions and expected output explained in each file. Be aware that
+	there may need to be some movement of files and projects to download to run them properly.
 
 smallProjectTest.sh: Runs a version of checkstyleScript.sh on a smaller project not used in our analysis
 

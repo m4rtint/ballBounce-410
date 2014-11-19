@@ -16,11 +16,14 @@ public class counter_cs : MonoBehaviour {
 		if(inAir){
 			Counter += Time.deltaTime;
 //			Debug.Log (Counter);
+			if(Counter < 0.06)
+			guiText.text = "Air Time : 0s"+history;
+			else
 			guiText.text = "Air Time :" + Counter+" s"+history;
 		}else{
 			if(Counter>0.1)
 			{
-			history = history+"\n"+interval+". "+Counter;
+			history = history+"\n"+interval+") "+Counter;
 			guiText.text = "Air Time :" + Counter+" s"+history;
 			interval++;
 			}

@@ -22,10 +22,22 @@ public class resizeBump : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		//Get all Data from dataReader one time
-		if(incrementOnce < 10)
-		{	
-			if(incrementOnce == 9 )
-				allData = ballScript.get_data();
+		if (incrementOnce < 3) {	
+						if (incrementOnce == 2)
+						{
+						allData = ballScript.get_data ();
+						string[] testData = (string[])allData [dataIndex];	
+						//Debug.Log (testData [0]);
+			
+						//All this is editable
+						//200 lines becomes size 2
+						//850 lines becomes 8, 2 sig fig
+						scale = Mathf.Sqrt (Mathf.Sqrt (int.Parse (testData [0])));
+						oneScale = Mathf.Round (scale * 10.0f) / 10.0f;
+						//Debug.Log(oneScale);
+						dataIndex++;
+						transform.localScale = new Vector3 (oneScale, oneScale, 1.0f);
+						}	
 			incrementOnce++;
 		}
 

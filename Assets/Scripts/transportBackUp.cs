@@ -3,10 +3,8 @@ using System.Collections;
 
 public class transportBackUp : MonoBehaviour {
 	float endPositionY;
-	float ballX = 43.2f;
-	float ballY;
-	public static float bottomFloorHeight = -18.4f;
-	public static float startFloorHeight = 19.6f;
+	static float startBallX = 40.943f;
+	static float startBallY = 19.133f;
 	float scale = 5.0f;
 	double oneScale;
 	int dataIndex = 1;
@@ -31,24 +29,13 @@ public class transportBackUp : MonoBehaviour {
 		{
 
 		//location
-		//Get position y of ball.
-		endPositionY = transform.position.y;
-//		Debug.Log ("End Position Y: "+endPositionY);
-		//Get Height different between ball and floor
-		float height = endPositionY - bottomFloorHeight;
-		//Add Height between ball and floor to Y Starting position.
-		ballY = startFloorHeight + height;
-		//Change Position of ball up
-		transform.position = new Vector2 (ballX, ballY);
-		transform.position = new Vector2 (87.98248f,41.29656f);
+		transform.position = new Vector2 (startBallX, startBallY);
 
-		//Test out if velocity zeroes out
-		//rigidbody2D.velocity = Vector3.zero;
+		//reset Velocity
 		rigidbody2D.angularVelocity = 0;
-
 		rigidbody2D.velocity = Vector2.zero;
-		//size
 
+		//size
 		//Grabbing Data - Resizing the ball
 		if (dataIndex < allData.Count) 
 			{
@@ -75,10 +62,22 @@ public class transportBackUp : MonoBehaviour {
 	void Update()
 	{	
 		//Get all Data from dataReader one time
-		if(incrementOnce < 10)
+		if(incrementOnce < 3)
 		{	
-			if(incrementOnce == 9 )
-				allData = ballScript.get_data();
+			if(incrementOnce == 2 )
+			{
+			allData = ballScript.get_data();
+			string[] testData = (string[])allData [dataIndex];	
+			//Debug.Log (testData [0]);
+			
+			//All this is editable
+			//200 lines becomes size 2
+			//850 lines becomes 8, 2 sig fig
+			scale = Mathf.Sqrt(Mathf.Sqrt(int.Parse(testData[0])));
+			oneScale = Mathf.Round (scale * 10.0f) / 10.0f;
+			//Debug.Log(oneScale);
+			dataIndex++;
+			}
 			incrementOnce++;
 		}
 	

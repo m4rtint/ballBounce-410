@@ -28,6 +28,7 @@ public class ParserOne {
 	private int lastErrors;
 	private int lastTot;
 	private LinkedList<String> order;
+	private int firstCommit;
 	
 	
 	public ParserOne(){
@@ -37,6 +38,7 @@ public class ParserOne {
 		contributors = new HashMap<String, Integer[]>();
 		lastErrors = 0;
 		lastTot = 0;
+		firstCommit = 0;
 		outputs = new ArrayList<String>();
 		order = new LinkedList<String>();
 	}
@@ -77,6 +79,8 @@ public class ParserOne {
 		String name;
 		String linesTot = "NA";
 		int errors = 0;
+		String[] splitted = breakSeq.get(1)[0].trim().split(" ");
+		firstCommit = Integer.parseInt(splitted[0]);
 //		int b = 1;
 		while(current <= BLOCKS){
 			start = 0;
@@ -100,7 +104,7 @@ public class ParserOne {
 				linesTot = linesTot.replace(" ", "");
 				//System.out.println("total number of lines: " + linesTot);
 				int totalLines = Integer.parseInt(linesTot);
-				errors = Integer.parseInt(splitStat[0])-2;
+				errors = Integer.parseInt(splitStat[0])-firstCommit;
 				int difference = errors - lastErrors;
 				int totDiff = totalLines - lastTot;
 				Integer[] intArray = {0,0};
@@ -227,7 +231,8 @@ public class ParserOne {
 	}
 	
 	private void WriteFile(){
-		 try (BufferedWriter writer = new BufferedWriter(new FileWriter("output.txt"))) {			
+		fileName = fileName.replaceAll(".txt", "");
+		 try (BufferedWriter writer = new BufferedWriter(new FileWriter(fileName + "-output.txt"))) {			
 			for(int i = 0; i < outputs.size(); i++){
 				//System.out.println("print out writes: " + outputs.get(i));
 				writer.write(outputs.get(i));

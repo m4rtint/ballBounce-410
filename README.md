@@ -1,7 +1,21 @@
-========CPSC 410 Project W01 2014========
+=====================CPSC 410 Project W01 2014=================
 
 Team: GG-LA
 Members: Ronald Lam 40815094, Pak Hong Or 43221118, Martin Tsang 41611112, Raymond Lee 35832112
+
+=====================Run Instructions===========================
+
+Script:
+
+checkstyleScript.sh: Found in the folder "Bash Script". First git clone the Team-04 and libgdx projects, then run the script
+	in the directory containing the projects. NOTE THAT THERE MAY BE A WINDOWS LINE FEED PROBLEM! Instructions on how to 
+	fix are written in the scripts!
+	
+Unity:
+
+Once we have the two text outputs, we place those in the Assets folder, and open up Unity (http://unity3d.com/). Once opened,
+	we open up our project BallBounce and from the Project tab, we will see the file CPSC410.Unity. We open that, and
+	then click Play, and we are able to get our output.  
 
 =====================Testing===================================
 

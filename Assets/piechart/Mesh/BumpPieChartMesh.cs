@@ -65,7 +65,7 @@ public class BumpPieChartMesh : MonoBehaviour
 			print("PieChart: Data null");
 			return;
 		}
-		
+		/*
 		for (int i = 0; i < mData.Length; i++)
 		{
 			if (mData[i] < 0)
@@ -74,7 +74,7 @@ public class BumpPieChartMesh : MonoBehaviour
 				return;
 			}
 		}
-		
+		*/
 		// Calculate sum of data values
 		float sumOfData = 0;
 		foreach (float value in mData)

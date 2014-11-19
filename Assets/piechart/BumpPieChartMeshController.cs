@@ -46,14 +46,15 @@ public class BumpPieChartMeshController : MonoBehaviour
 	void Update()
 	{
 		//Get all Data from the data Reader one time
-		if (incrementOnce < 2)
+		if (incrementOnce < 8)
 		{
-			if (incrementOnce == 1)
+			if (incrementOnce == 7)
 			{
 				//Grab Data
 				//Set PieChart of initial state instantly.
 				allData = ballScript.get_data ();
-				string[] testData = (string[])allData[1];
+				string[] testData = (string[])allData[dataIndex];
+				Debug.Log (testData[3]);
 				mData = getDataFromString(testData[3]);
 				dataIndex++;
 				mPieChart.Draw(mData);
@@ -82,7 +83,6 @@ public class BumpPieChartMeshController : MonoBehaviour
 	float[] getDataFromString(string data)
 	{
 		string[] stringTargets = data.Split(',');
-
 		float[] targets = new float[int.Parse (stringTargets[0])];
 		// length-1 because need to ignore the number 
 		// of people in the first element of array

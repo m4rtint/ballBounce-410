@@ -15,7 +15,7 @@ public class ParserOne {
 	 * of the bash file. 
 	 */ 
 	//number of line for each user
-	//number of errors for each user
+	//number of errors for each use
 	//number of contributors in the project
 	//project size
 	//number of errors
@@ -28,7 +28,6 @@ public class ParserOne {
 	private int lastErrors;
 	private int lastTot;
 	private LinkedList<String> order;
-	private int firstCommit;
 	
 	
 	public ParserOne(){
@@ -38,7 +37,6 @@ public class ParserOne {
 		contributors = new HashMap<String, Integer[]>();
 		lastErrors = 0;
 		lastTot = 0;
-		firstCommit = 0;
 		outputs = new ArrayList<String>();
 		order = new LinkedList<String>();
 	}
@@ -79,8 +77,10 @@ public class ParserOne {
 		String name;
 		String linesTot = "NA";
 		int errors = 0;
-		String[] splitted = breakSeq.get(1)[0].trim().split(" ");
-		firstCommit = Integer.parseInt(splitted[0]);
+		String[] splitted = breakSeq.get(1)[1].trim().split(" ");
+		String[] splitted1 = breakSeq.get(1)[0].trim().split(" ");
+		lastTot = Integer.parseInt(splitted[0]);
+		lastErrors = Integer.parseInt(splitted1[0]);
 //		int b = 1;
 		while(current <= BLOCKS){
 			start = 0;
@@ -104,7 +104,8 @@ public class ParserOne {
 				linesTot = linesTot.replace(" ", "");
 				//System.out.println("total number of lines: " + linesTot);
 				int totalLines = Integer.parseInt(linesTot);
-				errors = Integer.parseInt(splitStat[0])-firstCommit;
+				System.out.println(lastTot);
+				errors = Integer.parseInt(splitStat[0])-2;
 				int difference = errors - lastErrors;
 				int totDiff = totalLines - lastTot;
 				Integer[] intArray = {0,0};
